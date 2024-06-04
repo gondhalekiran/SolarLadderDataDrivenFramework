@@ -18,7 +18,7 @@ public class SolarLadderAddProjectPage {
 	@FindBy(xpath = "//select[@name='customerType']")
 	private WebElement selCustType;
 	@FindBy(xpath = "//input[@name='projectSize']")
-	private WebElement size;
+	private WebElement sizeInp;
 	@FindBy(xpath = "//input[@name='customerName']")
 	private WebElement nameInp;
 	@FindBy(xpath = "//input[@type='tel']")
@@ -53,8 +53,8 @@ public class SolarLadderAddProjectPage {
 	}
 
 	public void inpSolarLadderAddProjectPageSize(String sizekw) {
-		size.clear();
-		size.sendKeys(sizekw);
+		sizeInp.clear();
+		sizeInp.sendKeys(sizekw);
 	}
 
 	public void inpSolarLadderAddProjectPageName(String Name) {

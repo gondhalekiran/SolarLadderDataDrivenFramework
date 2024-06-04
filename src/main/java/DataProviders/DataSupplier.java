@@ -12,12 +12,12 @@ import org.testng.annotations.DataProvider;
 public class DataSupplier {
 	int startRow = 1; // positive mandatory 1-2, DataType 3-7,
 	int endRow = 1; // Length 8-11, Number 12-13
+	String filepath = ".\\TestData\\SolarLadderExcel.xlsx";
 
 	@DataProvider(name = "dataContainer1")
 	// @Test
 	public String[][] excelDataSupplier() throws IOException {
-		FileInputStream file = new FileInputStream(
-				"D:\\Eclipsework\\SolarLadderAssignment\\TestData\\SolarLadderExcel.xlsx");
+		FileInputStream file = new FileInputStream(filepath);
 		XSSFWorkbook Workbook = new XSSFWorkbook(file);
 		XSSFSheet sheet = Workbook.getSheet("Unit");
 		int row = endRow - startRow + 1;
@@ -43,10 +43,9 @@ public class DataSupplier {
 		return data;
 	}
 
-	@DataProvider(name = "dataContainer") 	
+	@DataProvider(name = "dataContainer")
 	public String[][] excelDS() throws IOException {
-		FileInputStream file = new FileInputStream(
-				"D:\\Eclipsework\\SolarLadderAssignment\\TestData\\SolarLadderExcel.xlsx");
+		FileInputStream file = new FileInputStream(filepath);
 		XSSFWorkbook Workbook = new XSSFWorkbook(file);
 		XSSFSheet sheet = Workbook.getSheet("Integration");
 

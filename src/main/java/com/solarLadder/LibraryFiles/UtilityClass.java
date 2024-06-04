@@ -18,7 +18,7 @@ public class UtilityClass {
 	// need to pass 1 inputs: key
 	public static String getPFData(String key) throws IOException {
 		FileInputStream file = new FileInputStream(
-				"D:\\Eclipsework\\SolarLadderAssignment\\PropertyFile.properties");// property
+				".\\PropertyFile.properties");// property
 																											// file path
 		Properties p = new Properties();
 		p.load(file);
@@ -31,7 +31,7 @@ public class UtilityClass {
 	// need to pass 2 inputs: 1.rowIndex 2.colIndex
 	public static String getTD(int rowIndex, int colIndex) throws IOException {
 		FileInputStream file = new FileInputStream(
-				"D:\\Eclipsework\\SolarLadderAssignment\\TestData\\SolarLadderExcel.xlsx");
+				".\\TestData\\SolarLadderExcel.xlsx");
 		Sheet sh = WorkbookFactory.create(file).getSheet("Sheet1");
 		String value = sh.getRow(rowIndex).getCell(colIndex).getStringCellValue();
 
@@ -50,7 +50,7 @@ public class UtilityClass {
 	public static void captureSS(WebDriver driver, String TCID) throws IOException {
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File dest = new File(
-				"D:\\Eclipsework\\SolarLadderAssignment\\FailedTCScreenshot\\TestCaseID" + TCID
+				".\\FailedTCScreenshot\\TestCaseID" + TCID
 						+ ".jpg");
 		FileHandler.copy(src, dest);
 	}
